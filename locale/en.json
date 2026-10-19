@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Workspace Tmp",
+    "description": "Gives the agent a temporary directory beside the workspace for test files, fixtures and other scratch output, with a workspace_tmp tool that creates, writes, lists and cleans it, and automatic deletion at turn end so nothing pollutes the project."
+  }
+}

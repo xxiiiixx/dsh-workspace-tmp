@@ -1,0 +1,56 @@
+{
+  "name": "dsh-workspace-tmp",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Workspace Tmp — scratch files for DeepSeek Harness that never land in the project tree. Gives the agent a session temporary directory beside the workspace, plus a system-prompt rule and a workspace_tmp tool that creates, writes, lists and cleans it, with automatic deletion at turn end.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "README_EN.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\"",
+    "verify": "node verify-wiring.mjs",
+    "verify:installed": "node verify-installed.mjs",
+    "check": "node --test \"test/*.test.mjs\" && node verify-wiring.mjs && node verify-installed.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xxiiiixx/dsh-workspace-tmp.git"
+  },
+  "homepage": "https://github.com/xxiiiixx/dsh-workspace-tmp#readme",
+  "bugs": {
+    "url": "https://github.com/xxiiiixx/dsh-workspace-tmp/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "tmp",
+    "scratch",
+    "temporary-directory",
+    "test-files",
+    "cleanup"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT"
+}

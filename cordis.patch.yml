@@ -1,0 +1,21 @@
+# dsh-workspace-tmp bundle patch.
+#
+# Installing this package appends it to the profile's bundle stack, and this
+# patch inserts the one Host row. The plugin has no browser half: it contributes
+# a system-prompt section and the `workspace_tmp` tool, nothing visual.
+#
+# The row is inserted with `config: {}` on purpose — every setting has a default
+# resolved at activation, so a fresh install needs no per-machine edit. Any field
+# stays overridable from the profile's own patch layer, which wins over a bundle
+# layer:
+#
+#   - id: workspace-tmp
+#     name: 'dsh-workspace-tmp'
+#     config:
+#       siblingDir: 'scratch'   # sibling of the workspace, default 'tmp'
+#       autoClean: 'session'    # 'turn' (default) | 'session' | 'off'
+#
+- insert:
+    - id: workspace-tmp
+      name: 'dsh-workspace-tmp'
+      config: {}
